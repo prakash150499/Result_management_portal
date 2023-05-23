@@ -303,6 +303,13 @@ public class resultPage extends javax.swing.JFrame {
                jTextField9.setText(rs.getString(10));
                jTextField10.setText(rs.getString(11));
                jTextField11.setText(rs.getString(12));
+               int s1=Integer.parseInt(jTextField7.getText());
+               int s2=Integer.parseInt(jTextField8.getText());
+               int s3=Integer.parseInt(jTextField9.getText());
+               int s4=Integer.parseInt(jTextField10.getText());
+               int s5=Integer.parseInt(jTextField11.getText());
+               String totalMarks= String.valueOf(s1+s2+s3+s4+s5);
+               jTextField12.setText(totalMarks);
            }
        }
        catch(Exception e)
