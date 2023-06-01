@@ -19,6 +19,7 @@ public class adminIndex extends javax.swing.JFrame {
      */
     public adminIndex() {
         initComponents();
+        setTitle("Student Result Management System");
     }
 
     /**

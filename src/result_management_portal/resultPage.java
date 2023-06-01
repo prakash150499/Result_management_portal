@@ -21,6 +21,7 @@ public class resultPage extends javax.swing.JFrame {
      */
     public resultPage() {
         initComponents();
+        setTitle("Student Result Management System");
     }
     public resultPage(String roll) {
         initComponents();

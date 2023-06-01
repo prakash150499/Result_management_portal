@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -22,6 +23,7 @@ public class allStudents extends javax.swing.JFrame {
      */
     public allStudents() {
         initComponents();
+        setTitle("Student Result Management System");
     }
 
     /**
@@ -131,7 +133,15 @@ public class allStudents extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,7 +204,8 @@ public class allStudents extends javax.swing.JFrame {
            Statement st=con.createStatement();
            ResultSet rs=st.executeQuery("select *from result");
           
-           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+          // jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+           jTable1.setModel((TableModel) DbUtils.resultSetToNestedList(rs));
           
           
        }

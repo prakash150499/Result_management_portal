@@ -14,6 +14,7 @@ public class Start extends javax.swing.JFrame {
     /** Creates new form Start */
     public Start() {
         initComponents();
+        setTitle("Student Result Management System");
     }
 
     /** This method is called from within the constructor to

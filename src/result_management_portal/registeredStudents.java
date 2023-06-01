@@ -20,6 +20,7 @@ public class registeredStudents extends javax.swing.JFrame {
      */
     public registeredStudents() {
         initComponents();
+        setTitle("Student Result Management System");
     }
 
     /**

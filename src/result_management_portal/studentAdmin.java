@@ -22,6 +22,7 @@ public class studentAdmin extends javax.swing.JFrame {
      */
     public studentAdmin() {
         initComponents();
+           setTitle("Student Result Management System");
     }
 
     /**

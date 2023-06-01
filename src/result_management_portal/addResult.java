@@ -19,6 +19,7 @@ public class addResult extends javax.swing.JFrame {
      */
     public addResult() {
         initComponents();
+        setTitle("Student Result Management System");
     }
 
     /**
