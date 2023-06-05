@@ -5,6 +5,9 @@
 
 package result_management_portal;
 
+import result_management_portal.Student.studentAdmin;
+import result_management_portal.Admin.adminLogin;
+
 /**
  *
  * @author praka
@@ -26,12 +29,12 @@ public class Start extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        student = new javax.swing.JButton();
+        admin = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -39,50 +42,46 @@ public class Start extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/graduated.png"))); // NOI18N
-        jButton1.setText("Student");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        student.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/Student_icon.png"))); // NOI18N
+        student.setText("Student");
+        student.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                studentActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 170, 50));
+        getContentPane().add(student, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 170, 50));
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/manager.png"))); // NOI18N
-        jButton2.setText("Admin");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        admin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/Admin_icon.png"))); // NOI18N
+        admin.setText("Admin");
+        admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                adminActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 170, 50));
+        getContentPane().add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 170, 50));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/Harvard-University.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new adminLogin().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_adminActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
       
     }//GEN-LAST:event_formComponentShown
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new studentAdmin().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_studentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,10 +119,9 @@ public class Start extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton admin;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton student;
     // End of variables declaration//GEN-END:variables
 
 }

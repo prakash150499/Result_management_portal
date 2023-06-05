@@ -2,14 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package result_management_portal;
+package result_management_portal.Student;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
+
+import result_management_portal.Start;
 
 /**
  *
@@ -35,70 +36,66 @@ public class studentAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        rollNumber = new javax.swing.JTextField();
+        result_button = new javax.swing.JButton();
+        back_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Enter Your Roll Number");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 160, 32));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 160, 32));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        rollNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        rollNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                rollNumberActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 160, 32));
+        getContentPane().add(rollNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 160, 32));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setText("Get Result");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        result_button.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        result_button.setText("Get Result");
+        result_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                result_buttonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 116, 32));
+        getContentPane().add(result_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 116, 32));
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        back_Button.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        back_Button.setText("Back");
+        back_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                back_ButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 116, 31));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/result_management_portal/Harvard-University.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -310, 710, 760));
+        getContentPane().add(back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 116, 31));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_ButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new Start().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_back_ButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void result_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_result_buttonActionPerformed
         // TODO add your handling code here:
-       String roll=jTextField1.getText();
+       String roll=rollNumber.getText();
          try
         {
-         String url="jdbc:mysql://localhost:3306/srms";
+         String url="jdbc:mysql://localhost:3306/srms2";
            String username="root";
            String password="Prakash@4064";
            Class.forName("com.mysql.cj.jdbc.Driver");
            Connection con=DriverManager.getConnection(url,username,password);
            Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select *from result where rollno='"+roll+"'");
+           ResultSet rs=st.executeQuery("select *from result where RollNumber='"+roll+"'");
           if(rs.next())
           {
               setVisible(false);
@@ -115,11 +112,11 @@ public class studentAdmin extends javax.swing.JFrame {
        {
            JOptionPane.showMessageDialog(null,e.toString());
        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_result_buttonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void rollNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_rollNumberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,10 +154,9 @@ public class studentAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton back_Button;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton result_button;
+    private javax.swing.JTextField rollNumber;
     // End of variables declaration//GEN-END:variables
 }
